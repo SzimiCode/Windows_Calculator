@@ -128,18 +128,26 @@ namespace Kalkulator_SM
       
         public string CalculateResultEquals()
         {
-            if (equalCount == 0)
-            {
-                lastValue = CurrentValue;
-            }
-
+           
             if (!string.IsNullOrEmpty(Operation))
             {
-                CurrentValue = PerformOperation(PendingValue, lastValue, Operation);
-                equalCount++;
+                if (equalCount > 1)
+                {
+                    this.CurrentValue = PerformOperation(this.PendingValue, this.lastValue, this.Operation);
+                    return $"{this.PendingValue} {this.Operation} {this.lastValue} =";
+                }
+                else
+                {
+                    this.CurrentValue = PerformOperation(this.PendingValue, this.CurrentValue, this.Operation);
+                    this.lastValue = CurrentValue;
+                    equalCount++;
+                    return $"{this.PendingValue} {this.Operation} {this.CurrentValue} =";
+                }
+                
             }
+            return "11";
+            
 
-            return $"{PendingValue} {Operation} {lastValue} =";
         }
         public void ReceiveInput(double Value)
         {
