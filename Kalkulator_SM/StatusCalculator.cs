@@ -17,6 +17,9 @@ namespace Kalkulator_SM
 
         public bool IsDecimal { get; set; } = false; // Flaga wskazująca wprowadzanie części dziesiętnej
 
+        private int equalCount = 0;
+
+        private double lastValue = 0;
 
         public void Reset()
         {
@@ -25,6 +28,7 @@ namespace Kalkulator_SM
             this.Operation = string.Empty;
             this.IsOperationPending = false;
             this.IsDecimal = false;
+            this.equalCount = 0;
         }
 
         public double PerformOperation(double value1, double value2, string operation)
@@ -121,37 +125,21 @@ namespace Kalkulator_SM
                 this.IsOperationPending = false;
             }
         }
-        int equalcount = 0;
+      
         public string CalculateResultEquals()
         {
-            double tempCurrent = this.CurrentValue;
-            double tempPending = this.PendingValue;
-            string tempOperation = this.Operation;
-            string operationString = $"{tempCurrent} {tempOperation} {tempPending}  =";
-            if (equalcount > 2)
+            if (equalCount == 0)
             {
-                this.CurrentValue = this.PerformOperation(tempPending, this.CurrentValue, tempOperation);
-                MessageBox.Show(equalcount.ToString(), "Ponadr!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.PendingValue = 0;
-                this.Operation = string.Empty;
-                this.IsOperationPending = false;
+                lastValue = CurrentValue;
             }
-            else
+
+            if (!string.IsNullOrEmpty(Operation))
             {
-                if (!string.IsNullOrEmpty(this.Operation))
-                {
-
-                    this.CurrentValue = this.PerformOperation(this.PendingValue, this.CurrentValue, this.Operation);
-                    MessageBox.Show(equalcount.ToString(), "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    this.PendingValue = 0;
-                    this.Operation = string.Empty;
-                    this.IsOperationPending = false;
-                    equalcount += 1;
-
-                }
+                CurrentValue = PerformOperation(PendingValue, lastValue, Operation);
+                equalCount++;
             }
-           
-            return operationString;
+
+            return $"{PendingValue} {Operation} {lastValue} =";
         }
         public void ReceiveInput(double Value)
         {
