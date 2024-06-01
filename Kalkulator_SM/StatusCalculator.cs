@@ -131,6 +131,7 @@ namespace Kalkulator_SM
             if (equalcount > 0)
             {
                 this.CurrentValue = this.PerformOperation(tempPending, this.CurrentValue, tempOperation);
+                MessageBox.Show("Dwa", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.PendingValue = 0;
                 this.Operation = string.Empty;
                 this.IsOperationPending = false;
@@ -141,6 +142,7 @@ namespace Kalkulator_SM
                 {
 
                     this.CurrentValue = this.PerformOperation(this.PendingValue, this.CurrentValue, this.Operation);
+                    MessageBox.Show("Raz", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.PendingValue = 0;
                     this.Operation = string.Empty;
                     this.IsOperationPending = false;
