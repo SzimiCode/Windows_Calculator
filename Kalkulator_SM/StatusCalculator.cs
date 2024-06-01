@@ -145,8 +145,9 @@ namespace Kalkulator_SM
                 }
                 
             }
-            return "11";
-            
+            this.IsOperationPending = false;
+            return string.Empty;
+
 
         }
         public void ReceiveInput(double Value)
