@@ -128,10 +128,10 @@ namespace Kalkulator_SM
             double tempPending = this.PendingValue;
             string tempOperation = this.Operation;
             string operationString = $"{tempCurrent} {tempOperation} {tempPending}  =";
-            if (equalcount > 0)
+            if (equalcount > 2)
             {
                 this.CurrentValue = this.PerformOperation(tempPending, this.CurrentValue, tempOperation);
-                MessageBox.Show("Dwa", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(equalcount.ToString(), "Ponadr!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.PendingValue = 0;
                 this.Operation = string.Empty;
                 this.IsOperationPending = false;
@@ -142,7 +142,7 @@ namespace Kalkulator_SM
                 {
 
                     this.CurrentValue = this.PerformOperation(this.PendingValue, this.CurrentValue, this.Operation);
-                    MessageBox.Show("Raz", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(equalcount.ToString(), "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     this.PendingValue = 0;
                     this.Operation = string.Empty;
                     this.IsOperationPending = false;
