@@ -101,7 +101,7 @@ namespace Kalkulator_SM
         {
             TxtDisplay2.Text = statusCalculator.CalculateResultEquals();
             txtDisplay1.Text = statusCalculator.CurrentValue.ToString();
-            
+
         }
 
         private void btnce_Click(object sender, EventArgs e)
