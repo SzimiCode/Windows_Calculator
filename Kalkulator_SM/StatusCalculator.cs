@@ -21,6 +21,12 @@ namespace Kalkulator_SM
 
         private double lastValue = 0;
 
+        public string LastOperation { get; set; } = string.Empty;
+
+        public double tempCurrent = 0;
+        public double tempPending = 0;
+        public string tempOperation = string.Empty;
+
         public void Reset()
         {
             this.CurrentValue = 0;
@@ -125,8 +131,24 @@ namespace Kalkulator_SM
                 this.IsOperationPending = false;
             }
         }
-      
         public string CalculateResultEquals()
+        {
+            if (!string.IsNullOrEmpty(this.Operation))
+            {
+                if (equalCount > 1)
+                {
+
+                }
+                else
+                {
+                    equalCount++;
+                }
+                    LastOperation = $"{this.PendingValue} {this.Operation} {this.lastValue} =";
+               
+            }
+            return string.Empty;
+        }
+        public string CalculateResultEquals1()
         {
            
             if (!string.IsNullOrEmpty(Operation))
