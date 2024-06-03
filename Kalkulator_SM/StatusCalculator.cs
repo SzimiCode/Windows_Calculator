@@ -151,7 +151,7 @@ namespace Kalkulator_SM
                     this.PendingValue = 0;
                     this.Operation = string.Empty;
                     this.IsOperationPending = false;
-                    equalCount++;
+                    this.equalCount += 1;
                 }
                    // LastOperation = $"{this.PendingValue} {this.Operation} {this.lastValue} =";
                
