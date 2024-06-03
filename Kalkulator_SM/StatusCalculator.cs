@@ -137,19 +137,21 @@ namespace Kalkulator_SM
         {
                 if (equalCount == 0)
                 {
-                    tempCurrent = this.CurrentValue;
-                    tempPending = this.PendingValue;
-                    tempOperation = this.Operation;
-                    this.CurrentValue = this.PerformOperation(this.PendingValue, this.CurrentValue, this.Operation);
-                    this.PendingValue = 0;
-                    this.Operation = string.Empty;
-                    this.IsOperationPending = false;
-                    this.equalCount += 1;
+                MessageBox.Show($"{this.equalCount}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tempCurrent = this.CurrentValue;
+                tempPending = this.PendingValue;
+                tempOperation = this.Operation;
+                this.CurrentValue = this.PerformOperation(this.PendingValue, this.CurrentValue, this.Operation);
+                this.PendingValue = 0;
+                this.Operation = string.Empty;
+                this.IsOperationPending = false;
                 }
                 else
                 {
-                    this.CurrentValue = this.PerformOperation(this.CurrentValue, tempPending, tempOperation);
-                } 
+
+                tempCurrent = this.PerformOperation(tempCurrent, tempPending, tempOperation);
+                MessageBox.Show($"{this.equalCount}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
         } 
        
         public void ReceiveInput(double Value)

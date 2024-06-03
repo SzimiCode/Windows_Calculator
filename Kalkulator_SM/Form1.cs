@@ -100,7 +100,7 @@ namespace Kalkulator_SM
         private void btnequals1_Click(object sender, EventArgs e)
         {
             statusCalculator.CalculateResultEquals();
-            if (statusCalculator.equalCount > 1)
+            if (statusCalculator.equalCount > 0)
             {
 
                 TxtDisplay2.Text = $"{statusCalculator.tempCurrent} {statusCalculator.tempOperation} {statusCalculator.tempPending} =";
@@ -110,6 +110,8 @@ namespace Kalkulator_SM
             {
                 TxtDisplay2.Text = $"{statusCalculator.tempCurrent} {statusCalculator.tempOperation} {statusCalculator.tempPending} =";
                 txtDisplay1.Text = statusCalculator.CurrentValue.ToString();
+                statusCalculator.equalCount += 1;
+               
             }
 
 
