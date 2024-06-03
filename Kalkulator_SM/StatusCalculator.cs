@@ -99,6 +99,7 @@ namespace Kalkulator_SM
         public void SetOperation(string operation)
         {
             this.IsDecimal = false;
+            this.equalCount = 0;
             if (this.IsOperationPending)
             {
                 CalculateResult();
