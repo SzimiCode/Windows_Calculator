@@ -135,7 +135,8 @@ namespace Kalkulator_SM
         }
         public void CalculateResultEquals()
         {
-                if (equalCount == 0)
+            MessageBox.Show("ka", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            if (equalCount == 0)
                 {
                 MessageBox.Show($"{this.equalCount}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tempCurrent = this.CurrentValue;
