@@ -148,10 +148,10 @@ namespace Kalkulator_SM
                 }
                 else
                 {
-
                 tempCurrent = this.PerformOperation(tempCurrent, tempPending, tempOperation);
                 MessageBox.Show($"{this.equalCount}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                this.equalCount += 1;
         } 
        
         public void ReceiveInput(double Value)
