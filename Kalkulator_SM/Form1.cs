@@ -103,12 +103,12 @@ namespace Kalkulator_SM
             if(statusCalculator.equalCount > 1110)
             {
                 
-                TxtDisplay2.Text = $"{statusCalculator.tempCurrent} {statusCalculator.Operation} {statusCalculator.tempPending} =";
+                TxtDisplay2.Text = $"{statusCalculator.tempCurrent} {statusCalculator.tempOperation} {statusCalculator.tempPending} =";
                 txtDisplay1.Text = statusCalculator.tempCurrent.ToString();
             }
             else
             {
-                TxtDisplay2.Text = statusCalculator.PendingValue.ToString();
+                TxtDisplay2.Text = $"{statusCalculator.tempCurrent} {statusCalculator.tempOperation} {statusCalculator.tempPending} =";
                 txtDisplay1.Text = statusCalculator.CurrentValue.ToString();
             }
             
