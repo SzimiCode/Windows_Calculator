@@ -106,10 +106,10 @@ namespace Kalkulator_SM
             }
             else
             {
-
+                TxtDisplay2.Text = statusCalculator.PendingValue.ToString();
+                txtDisplay1.Text = statusCalculator.CurrentValue.ToString();
             }
-            TxtDisplay2.Text = statusCalculator.PendingValue.ToString();
-            txtDisplay1.Text = statusCalculator.CurrentValue.ToString();
+            
 
         }
 
