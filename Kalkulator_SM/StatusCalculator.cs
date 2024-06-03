@@ -131,13 +131,13 @@ namespace Kalkulator_SM
                 this.IsOperationPending = false;
             }
         }
-        public string CalculateResultEquals()
+        public void CalculateResultEquals()
         {
             if (!string.IsNullOrEmpty(this.Operation))
             {
                 if (equalCount > 1)
                 {
-                    tempCurrent = this.PerformOperation(tempPending, tempCurrent, this.Operation);
+                    tempCurrent = this.PerformOperation(tempPending, tempCurrent, tempOperation);
                 }
                 else
                 {
@@ -150,10 +150,10 @@ namespace Kalkulator_SM
                     this.IsOperationPending = false;
                     equalCount++;
                 }
-                    LastOperation = $"{this.PendingValue} {this.Operation} {this.lastValue} =";
+                   // LastOperation = $"{this.PendingValue} {this.Operation} {this.lastValue} =";
                
             }
-            return string.Empty;
+            
         }
         public string CalculateResultEquals1()
         {
