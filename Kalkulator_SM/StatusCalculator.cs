@@ -137,10 +137,17 @@ namespace Kalkulator_SM
             {
                 if (equalCount > 1)
                 {
-
+                    tempCurrent = this.PerformOperation(tempPending, tempCurrent, this.Operation);
                 }
                 else
                 {
+                    tempCurrent = this.CurrentValue;
+                    tempPending = this.PendingValue;
+                    tempOperation = this.Operation;
+                    this.CurrentValue = this.PerformOperation(this.PendingValue, this.CurrentValue, this.Operation);
+                    this.PendingValue = 0;
+                    this.Operation = string.Empty;
+                    this.IsOperationPending = false;
                     equalCount++;
                 }
                     LastOperation = $"{this.PendingValue} {this.Operation} {this.lastValue} =";
