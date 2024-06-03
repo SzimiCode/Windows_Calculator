@@ -185,7 +185,6 @@ namespace Kalkulator_SM
                 }
             }
         }
-
         private void btnroot_Click(object sender, EventArgs e)
         {
 
