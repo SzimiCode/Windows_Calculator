@@ -135,8 +135,6 @@ namespace Kalkulator_SM
         }
         public void CalculateResultEquals()
         {
-            if (!string.IsNullOrEmpty(this.Operation))
-            {
                 if (equalCount == 0)
                 {
                     tempCurrent = this.CurrentValue;
@@ -151,12 +149,8 @@ namespace Kalkulator_SM
                 else
                 {
                     this.CurrentValue = this.PerformOperation(this.CurrentValue, tempPending, tempOperation);
-                }
-
-
-            }
-            
-        }
+                } 
+        } 
        
         public void ReceiveInput(double Value)
         {
