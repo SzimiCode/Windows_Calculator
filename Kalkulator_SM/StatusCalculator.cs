@@ -17,7 +17,7 @@ namespace Kalkulator_SM
 
         public bool IsDecimal { get; set; } = false; // Flaga wskazująca wprowadzanie części dziesiętnej
 
-        private int equalCount = 0;
+        public int equalCount { get; set; } = 0;
 
         private double lastValue = 0;
 
@@ -39,6 +39,7 @@ namespace Kalkulator_SM
 
         public double PerformOperation(double value1, double value2, string operation)
         {
+            
             switch (operation)
             {
                 case "➕":
@@ -135,7 +136,7 @@ namespace Kalkulator_SM
         {
             if (!string.IsNullOrEmpty(this.Operation))
             {
-                if (equalCount > 1)
+                if (equalCount > 0)
                 {
                     tempCurrent = this.PerformOperation(tempPending, tempCurrent, tempOperation);
                 }
