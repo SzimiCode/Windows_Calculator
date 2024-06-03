@@ -158,30 +158,7 @@ namespace Kalkulator_SM
             }
             
         }
-        public string CalculateResultEquals1()
-        {
-           
-            if (!string.IsNullOrEmpty(Operation))
-            {
-                if (equalCount > 1)
-                {
-                    this.CurrentValue = PerformOperation(this.PendingValue, this.lastValue, this.Operation);
-                    return $"{this.PendingValue} {this.Operation} {this.lastValue} =";
-                }
-                else
-                {
-                    this.CurrentValue = PerformOperation(this.PendingValue, this.CurrentValue, this.Operation);
-                    this.lastValue = CurrentValue;
-                    equalCount++;
-                    return $"{this.PendingValue} {this.Operation} {this.CurrentValue} =";
-                }
-                
-            }
-            this.IsOperationPending = false;
-            return string.Empty;
-
-
-        }
+       
         public void ReceiveInput(double Value)
         {
 
