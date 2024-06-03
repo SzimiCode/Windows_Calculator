@@ -139,9 +139,11 @@ namespace Kalkulator_SM
                 if (equalCount > 0)
                 {
                     tempCurrent = this.PerformOperation(tempPending, tempCurrent, tempOperation);
+                    MessageBox.Show("B", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
+                    MessageBox.Show("A", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     tempCurrent = this.CurrentValue;
                     tempPending = this.PendingValue;
                     tempOperation = this.Operation;

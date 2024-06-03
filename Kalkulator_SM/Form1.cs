@@ -99,8 +99,10 @@ namespace Kalkulator_SM
 
         private void btnequals1_Click(object sender, EventArgs e)
         {
-            if(statusCalculator.equalCount > 0)
+            statusCalculator.CalculateResultEquals();
+            if(statusCalculator.equalCount > 1110)
             {
+                
                 TxtDisplay2.Text = $"{statusCalculator.tempCurrent} {statusCalculator.Operation} {statusCalculator.tempPending} =";
                 txtDisplay1.Text = statusCalculator.tempCurrent.ToString();
             }
