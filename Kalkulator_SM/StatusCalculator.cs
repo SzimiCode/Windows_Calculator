@@ -135,7 +135,7 @@ namespace Kalkulator_SM
         }
         public void CalculateResultEquals()
         {
-            MessageBox.Show("ka", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            Console.WriteLine("CalculateResultEquals called, EqualCount: " + this.equalCount);
             if (equalCount == 0)
                 {
                 MessageBox.Show($"{this.equalCount}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -149,8 +149,8 @@ namespace Kalkulator_SM
                 }
                 else
                 {
-                tempCurrent = this.PerformOperation(tempCurrent, tempPending, tempOperation);
-                MessageBox.Show($"{this.equalCount}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tempCurrent = this.PerformOperation(tempPending, tempCurrent, tempOperation);
+                MessageBox.Show($"{this.equalCount} + to ja", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 this.equalCount += 1;
         } 
