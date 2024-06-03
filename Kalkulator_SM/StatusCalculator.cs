@@ -99,7 +99,6 @@ namespace Kalkulator_SM
         public void SetOperation(string operation)
         {
             this.IsDecimal = false;
-            this.equalCount = 0;
             if (this.IsOperationPending)
             {
                 CalculateResult();
@@ -131,20 +130,15 @@ namespace Kalkulator_SM
                 this.PendingValue = 0;
                 this.Operation = string.Empty;
                 this.IsOperationPending = false;
+                this.equalCount = 0;
             }
         }
         public void CalculateResultEquals()
         {
             if (!string.IsNullOrEmpty(this.Operation))
             {
-                if (equalCount > 0)
+                if (equalCount == 0)
                 {
-                    tempCurrent = this.PerformOperation(tempPending, tempCurrent, tempOperation);
-                    MessageBox.Show($"{this.equalCount}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    MessageBox.Show($"{this.equalCount}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     tempCurrent = this.CurrentValue;
                     tempPending = this.PendingValue;
                     tempOperation = this.Operation;
@@ -154,8 +148,12 @@ namespace Kalkulator_SM
                     this.IsOperationPending = false;
                     this.equalCount += 1;
                 }
-                   
-               
+                else
+                {
+                    this.CurrentValue = this.PerformOperation(this.CurrentValue, tempPending, tempOperation);
+                }
+
+
             }
             
         }
