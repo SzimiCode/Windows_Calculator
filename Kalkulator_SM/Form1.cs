@@ -101,10 +101,14 @@ namespace Kalkulator_SM
         {
             if(statusCalculator.equalCount > 0)
             {
-                TxtDisplay2.Text = $"{statusCalculator.tempPending} {this.Operation} {this.lastValue} =";
+                TxtDisplay2.Text = $"{statusCalculator.tempCurrent} {statusCalculator.Operation} {statusCalculator.tempPending} =";
                 txtDisplay1.Text = statusCalculator.tempCurrent.ToString();
             }
-            TxtDisplay2.Text = $"{this.PendingValue} {this.Operation} {this.lastValue} =";
+            else
+            {
+
+            }
+            TxtDisplay2.Text = statusCalculator.PendingValue.ToString();
             txtDisplay1.Text = statusCalculator.CurrentValue.ToString();
 
         }
