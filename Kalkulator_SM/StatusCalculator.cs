@@ -149,7 +149,7 @@ namespace Kalkulator_SM
                 }
                 else
                 {
-                tempCurrent = this.PerformOperation(tempPending, tempCurrent, tempOperation);
+                 tempCurrent = this.PerformOperation(tempPending, tempCurrent, tempOperation);
                 MessageBox.Show($"{this.equalCount} + to ja", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 this.equalCount += 1;
