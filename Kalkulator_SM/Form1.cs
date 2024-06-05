@@ -96,7 +96,7 @@ namespace Kalkulator_SM
             this.WindowState = FormWindowState.Minimized;
 
         }
-        private bool isCalculating = false;
+       
         private void btnequals1_Click(object sender, EventArgs e)
         {
            

@@ -466,7 +466,6 @@ namespace Kalkulator_SM
             this.btnequals1.TabIndex = 29;
             this.btnequals1.Text = "=";
             this.btnequals1.UseVisualStyleBackColor = false;
-            this.btnequals1.Click += new System.EventHandler(this.btnequals1_Click);
             // 
             // button2
             // 
