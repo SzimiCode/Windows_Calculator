@@ -138,11 +138,11 @@ namespace Kalkulator_SM
             
             if (equalCount == 0)
                 {
-                MessageBox.Show($"{this.equalCount}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                tempCurrent = this.CurrentValue;
+                //MessageBox.Show($"{this.equalCount}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tempPending = this.PendingValue;
                 tempOperation = this.Operation;
                 this.CurrentValue = this.PerformOperation(this.PendingValue, this.CurrentValue, this.Operation);
+                tempCurrent = this.CurrentValue;
                 this.PendingValue = 0;
                 this.Operation = string.Empty;
                 this.IsOperationPending = false;
@@ -150,7 +150,7 @@ namespace Kalkulator_SM
                 else
                 {
                  tempCurrent = this.PerformOperation(tempPending, tempCurrent, tempOperation);
-                MessageBox.Show($"{this.equalCount} + to ja", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show($"{this.equalCount} + to ja", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 this.equalCount += 1;
         } 
