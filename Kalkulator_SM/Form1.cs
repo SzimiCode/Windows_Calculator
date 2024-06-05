@@ -99,8 +99,6 @@ namespace Kalkulator_SM
        
         private void btnequals1_Click(object sender, EventArgs e)
         {
-           
-            
             if (statusCalculator.equalCount > 1)
             {
                 MessageBox.Show($"{statusCalculator.equalCount}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -111,6 +109,7 @@ namespace Kalkulator_SM
             else
             {
                 MessageBox.Show($"{statusCalculator.equalCount} + to ja", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
                 TxtDisplay2.Text = $"{statusCalculator.tempCurrent} {statusCalculator.tempOperation} {statusCalculator.tempPending} =";
                 statusCalculator.CalculateResultEquals();
                 txtDisplay1.Text = statusCalculator.CurrentValue.ToString();
