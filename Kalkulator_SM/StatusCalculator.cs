@@ -135,21 +135,21 @@ namespace Kalkulator_SM
         }
         public void CalculateResultEquals()
         {
-            //Console.WriteLine("CalculateResultEquals called, EqualCount: " + this.equalCount);
+            
             if (equalCount == 0)
                 {
                 MessageBox.Show($"{this.equalCount}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 tempCurrent = this.CurrentValue;
                 tempPending = this.PendingValue;
                 tempOperation = this.Operation;
-                //this.CurrentValue = this.PerformOperation(this.PendingValue, this.CurrentValue, this.Operation);
+                this.CurrentValue = this.PerformOperation(this.PendingValue, this.CurrentValue, this.Operation);
                 this.PendingValue = 0;
                 this.Operation = string.Empty;
                 this.IsOperationPending = false;
                 }
                 else
                 {
-                 //tempCurrent = this.PerformOperation(tempPending, tempCurrent, tempOperation);
+                 tempCurrent = this.PerformOperation(tempPending, tempCurrent, tempOperation);
                 MessageBox.Show($"{this.equalCount} + to ja", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 this.equalCount += 1;
