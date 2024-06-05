@@ -107,7 +107,7 @@ namespace Kalkulator_SM
             }
             else
             {
-                TxtDisplay2.Text = $"{statusCalculator.tempCurrent} {statusCalculator.tempOperation} {statusCalculator.tempPending} =";
+                TxtDisplay2.Text = $"{statusCalculator.tempPending}{statusCalculator.tempOperation}{statusCalculator.tempCurrent}=";
             }
 
             txtDisplay1.Text = statusCalculator.CurrentValue.ToString();
