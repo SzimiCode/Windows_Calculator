@@ -135,25 +135,28 @@ namespace Kalkulator_SM
         }
         public void CalculateResultEquals()
         {
-            
+
             if (equalCount == 0)
-                {
-                //MessageBox.Show($"{this.equalCount}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            {
+                // Zapamiętaj bieżące wartości i operację
                 tempCurrent = this.CurrentValue;
                 tempPending = this.PendingValue;
                 tempOperation = this.Operation;
+
+                // Wykonaj operację
                 this.CurrentValue = this.PerformOperation(this.PendingValue, this.CurrentValue, this.Operation);
-                tempCurrent = this.CurrentValue;
                 this.PendingValue = 0;
                 this.Operation = string.Empty;
                 this.IsOperationPending = false;
-                }
-                else
-                {
-                 tempCurrent = this.PerformOperation(tempPending, tempCurrent, tempOperation);
-                //MessageBox.Show($"{this.equalCount} + to ja", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                this.equalCount += 1;
+            }
+            else
+            {
+                // Kontynuuj operację z zapamiętanymi wartościami
+                this.CurrentValue = this.PerformOperation(this.CurrentValue, this.tempPending, this.tempOperation);
+            }
+
+            // Zwiększ licznik równania
+            this.equalCount += 1;
         } 
        
         public void ReceiveInput(double Value)
