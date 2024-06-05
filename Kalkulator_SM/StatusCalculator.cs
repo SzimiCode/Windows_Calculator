@@ -99,6 +99,10 @@ namespace Kalkulator_SM
         public void SetOperation(string operation)
         {
             this.IsDecimal = false;
+            this.equalCount = 0;
+            this.tempCurrent = 0;
+            this.tempPending = 0;
+            this.tempOperation = string.Empty;
             if (this.IsOperationPending)
             {
                 CalculateResult();
@@ -130,10 +134,7 @@ namespace Kalkulator_SM
                 this.PendingValue = 0;
                 this.Operation = string.Empty;
                 this.IsOperationPending = false;
-                this.equalCount = 0;
-                tempCurrent = 0;
-                tempPending = 0;
-                tempOperation = string.Empty;
+                
             }
         }
         public void CalculateResultEquals()
