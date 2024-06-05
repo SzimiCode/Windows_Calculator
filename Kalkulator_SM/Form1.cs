@@ -99,23 +99,19 @@ namespace Kalkulator_SM
        
         private void btnequals1_Click(object sender, EventArgs e)
         {
+            statusCalculator.CalculateResultEquals();
+
             if (statusCalculator.equalCount > 1)
             {
-                MessageBox.Show($"{statusCalculator.equalCount}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                TxtDisplay2.Text = $"{statusCalculator.tempCurrent} {statusCalculator.tempOperation} {statusCalculator.tempPending} =";
-                statusCalculator.CalculateResultEquals();
-                txtDisplay1.Text = statusCalculator.tempCurrent.ToString();
+                TxtDisplay2.Text = $"{statusCalculator.CurrentValue} {statusCalculator.tempOperation} {statusCalculator.tempPending} =";
             }
             else
             {
-                MessageBox.Show($"{statusCalculator.equalCount} + to ja", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
                 TxtDisplay2.Text = $"{statusCalculator.tempCurrent} {statusCalculator.tempOperation} {statusCalculator.tempPending} =";
-                statusCalculator.CalculateResultEquals();
-                txtDisplay1.Text = statusCalculator.CurrentValue.ToString();
-
             }
-           
+
+            txtDisplay1.Text = statusCalculator.CurrentValue.ToString();
+
 
         }
 
