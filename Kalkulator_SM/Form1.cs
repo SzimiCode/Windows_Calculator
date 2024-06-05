@@ -99,8 +99,7 @@ namespace Kalkulator_SM
         private bool isCalculating = false;
         private void btnequals1_Click(object sender, EventArgs e)
         {
-            if (isCalculating) return; // Ignore if already calculating
-            isCalculating = true;
+           
             statusCalculator.CalculateResultEquals();
             if (statusCalculator.equalCount != 1)
             {
@@ -114,7 +113,7 @@ namespace Kalkulator_SM
                 txtDisplay1.Text = statusCalculator.CurrentValue.ToString();
 
             }
-            isCalculating = false;
+           
 
         }
 
