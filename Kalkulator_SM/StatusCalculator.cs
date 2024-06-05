@@ -131,6 +131,9 @@ namespace Kalkulator_SM
                 this.Operation = string.Empty;
                 this.IsOperationPending = false;
                 this.equalCount = 0;
+                tempCurrent = 0;
+                tempPending = 0;
+                tempOperation = string.Empty;
             }
         }
         public void CalculateResultEquals()
