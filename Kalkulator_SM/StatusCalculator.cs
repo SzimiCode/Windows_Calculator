@@ -138,12 +138,11 @@ namespace Kalkulator_SM
 
             if (equalCount == 0)
             {
-                // Zapamiętaj bieżące wartości i operację
                 tempCurrent = this.CurrentValue;
                 tempPending = this.PendingValue;
                 tempOperation = this.Operation;
 
-                // Wykonaj operację
+
                 this.CurrentValue = this.PerformOperation(this.PendingValue, this.CurrentValue, this.Operation);
                 this.PendingValue = 0;
                 this.Operation = string.Empty;
@@ -151,11 +150,10 @@ namespace Kalkulator_SM
             }
             else
             {
-                // Kontynuuj operację z zapamiętanymi wartościami
+
                 this.CurrentValue = this.PerformOperation(this.CurrentValue, this.tempPending, this.tempOperation);
             }
 
-            // Zwiększ licznik równania
             this.equalCount += 1;
         } 
        
