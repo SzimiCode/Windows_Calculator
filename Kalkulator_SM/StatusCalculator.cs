@@ -141,8 +141,8 @@ namespace Kalkulator_SM
 
             if (equalCount == 0)
             {
-                tempCurrent = this.CurrentValue;
-                tempPending = this.PendingValue;
+                tempCurrent = this.PendingValue;
+                tempPending = this.CurrentValue;
                 tempOperation = this.Operation;
 
 
