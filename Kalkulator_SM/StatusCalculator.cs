@@ -139,10 +139,11 @@ namespace Kalkulator_SM
             if (equalCount == 0)
                 {
                 //MessageBox.Show($"{this.equalCount}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                tempPending = this.PendingValue;
-                tempOperation = this.Operation;
+               
                 this.CurrentValue = this.PerformOperation(this.PendingValue, this.CurrentValue, this.Operation);
                 tempCurrent = this.CurrentValue;
+                tempPending = this.PendingValue;
+                tempOperation = this.Operation;
                 this.PendingValue = 0;
                 this.Operation = string.Empty;
                 this.IsOperationPending = false;
